@@ -4,6 +4,8 @@
   "description": "Vuejs directive that resizes on an event (e.g. textarea)",
   "author": "Venkat Peri <venkatperi@gmail.com>",
   "main": "dist/VueResizeOnEvent.min.js",
+  "unpkg": "dist/VueResizeOnEvent.min.js",
+  "browser": "dist/umd/VueResizeOnEvent.min.js",
   "license": "MIT",
   "scripts": {
     "lint": "eslint src/**/*.{js,vue}",
@@ -15,6 +17,8 @@
   },
   "keywords": [
     "vue",
+    "vuejs",
+    "mixin",
     "directive"
   ],
   "files": [
