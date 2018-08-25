@@ -13,7 +13,8 @@
     "test": "poi test",
     "test:watch": "poi test --watch",
     "test:cov": "poi test --coverage",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "prepare": "npm run clean; npm run build"
   },
   "keywords": [
     "vue",

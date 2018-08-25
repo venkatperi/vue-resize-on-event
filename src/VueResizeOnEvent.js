@@ -22,13 +22,8 @@
 import {resizeDirective} from './resizeDirective';
 
 // noinspection JSUnusedGlobalSymbols
-export default ( type ) => {
+module.exports = ( type ) => {
   let directives = {}
   directives[`resize-on-${type}`] = resizeDirective( type )
   return { directives }
-}
-
-//hack
-if ( typeof window !== 'undefined' && window.VueResizeOnEventModule ) {
-  window.VueResizeOnEvent = window.VueResizeOnEventModule.default  //ugh
 }
