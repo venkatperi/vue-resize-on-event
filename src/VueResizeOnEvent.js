@@ -28,3 +28,7 @@ export default ( type ) => {
   return { directives }
 }
 
+//hack
+if ( typeof window !== 'undefined' && window.VueResizeOnEvent.default ) {
+  window.VueResizeOnEvent = window.VueResizeOnEvent.default  //ugh
+}
