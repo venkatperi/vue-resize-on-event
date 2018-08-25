@@ -29,6 +29,6 @@ export default ( type ) => {
 }
 
 //hack
-if ( typeof window !== 'undefined' && VueResizeOnEventModule ) {
-  window.VueResizeOnEvent = VueResizeOnEventModule.default  //ugh
+if ( typeof window !== 'undefined' && window.VueResizeOnEventModule ) {
+  window.VueResizeOnEvent = window.VueResizeOnEventModule.default  //ugh
 }
