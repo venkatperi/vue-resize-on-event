@@ -7,7 +7,7 @@ const PascalName = toPascal( pkg.name )
 module.exports = {
   entry: './src/VueResizeOnEvent.js',
 
-  moduleName: PascalName,
+  moduleName: PascalName + 'Module',
 
   filename: {
     js: `${PascalName}.min.js`,
