@@ -22,7 +22,7 @@
 import {resizeDirective} from './resizeDirective';
 
 // noinspection JSUnusedGlobalSymbols
-module.exports = ( type ) => {
+export default ( type ) => {
   let directives = {}
   directives[`resize-on-${type}`] = resizeDirective( type )
   return { directives }
