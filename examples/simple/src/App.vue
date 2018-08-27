@@ -19,15 +19,6 @@
       }
     },
 
-    methods: {
-      double( x ) {
-        return `${x}${x}`
-      },
-      upper( x ) {
-        return x.toUpperCase()
-      },
-    },
-
   }
 </script>
 

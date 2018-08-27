@@ -1,9 +1,17 @@
 # vue-resize-on-event
 
-[![npm](https://img.shields.io/npm/v/vue-resize-on-event.svg) ![npm](https://img.shields.io/npm/dm/vue-resize-on-event.svg)](https://www.npmjs.com/package/vue-resize)
-[![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
+![npm](https://img.shields.io/npm/v/vue-resize-on-event.svg) [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 
 VueJS [directive](https://vuejs.org/v2/guide/custom-directive.html) to resize a component when a given event fires.
+
+<div style="width: 150px; text-align: center;">
+  <div>
+<a href="https://jsfiddle.net/venkatperi/vntmzxL6/45/"><img src="https://png.icons8.com/small/50/000000/jsfiddle.png" alt="jsfiddle demo"></a>
+  </div>
+  <div>
+<a href="https://jsfiddle.net/venkatperi/vntmzxL6/45/">JSFiddle Demo</a>
+  </div>
+</div>
 
 # Installation
 
