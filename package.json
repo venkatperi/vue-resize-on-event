@@ -3,9 +3,9 @@
   "version": "1.2.0",
   "description": "Vuejs directive that resizes on an event (e.g. textarea)",
   "author": "Venkat Peri <venkatperi@gmail.com>",
-  "main": "dist/VueResizeOnEvent.js",
-  "unpkg": "dist/VueResizeOnEvent.min.js",
-  "browser": "dist/umd/VueResizeOnEvent.min.js",
+  "main": "dist/index.js",
+  "unpkg": "dist/vue-resize-on-event.min.js",
+  "browser": "dist/umd/vue-resize-on-event.js",
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf dist",
