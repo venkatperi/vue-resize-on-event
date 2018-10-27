@@ -1,24 +1,30 @@
 <template>
   <div>
-    <textarea v-model="text" class="input2"
+    <textarea
+      v-model="text"
+      class="input2"
       v-resize-on-input> </textarea>
   </div>
 </template>
 
 
-<script>
-  import VueResizeOnEvent from 'code/VueResizeOnEvent'
+<script lang="ts">
+  import { Component } from 'av-ts'
+  import Vue from "vue";
+  import VueResizeOnEvent from '../../../src/index'
+
+  @Component({
+    name: 'App',
+    directives: {
+      ...VueResizeOnEvent('input'),
+    },
+  })
+  class App extends Vue {
+    text = ''
+  }
 
   export default {
-
-    mixins: [VueResizeOnEvent( 'input' )],
-
-    data() {
-      return {
-        text: '',
-      }
-    },
-
+    name
   }
 </script>
 

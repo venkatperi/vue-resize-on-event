@@ -19,13 +19,29 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 // USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-/**
- * Adjust the height of the given element to the element's scrollHeight
- *
- * @param e {Event|HTMLElement} element to resize
- */
-export function resize( e ) {
-  let el = e.target || e
-  el.style.setProperty( 'height', 'auto' )
-  el.style.setProperty( 'height', `${el.scrollHeight}px` )
+import { DirectiveOptions, PluginObject } from 'vue';
+import { resizeDirective } from './resizeDirective'
+
+export { resizeDirective}
+
+type Directives = {
+  [key: string]: DirectiveOptions
 }
+
+export function vueResizeDirectiveObject(eventName: string): Directives {
+  let directives: Directives = {}
+  directives[`resize-on-${eventName}`] = resizeDirective(eventName)
+  return directives
+}
+
+
+export const VueResizeDirectives: PluginObject<Array<string>> = {
+  install(Vue, opts?: Array<string>) {
+    if (opts) {
+      for (let event of opts) {
+        Vue.directive(`resize-on-${event}`, resizeDirective(event))
+      }
+    }
+  }
+}
+

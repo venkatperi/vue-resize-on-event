@@ -19,26 +19,16 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 // USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import {resize} from './resize';
 
-/**
- * Creates a VueJS directive for the given event type
- *
- * @param type {String} the event type (e.g. input or change)
- * @return {Object} the VueJS directive
- */
-export function resizeDirective( type ) {
-  return {
-    bind( el ) {
-      el.addEventListener( type, resize )
-    },
+import Vue from 'vue'
+import App from './App.vue'
 
-    update( el ) {
-      el.addEventListener( type, resize )
-    },
-
-    unbind( el ) {
-      el.removeEventListener( type, resize )
-    },
-  }
-}
+new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!',
+  },
+  components: {
+    App,
+  },
+});

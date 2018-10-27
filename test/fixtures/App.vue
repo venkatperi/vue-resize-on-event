@@ -8,7 +8,7 @@
 
 <!--suppress JSUnusedGlobalSymbols -->
 <script>
-  import VueResizeOnEvent from '../../src/VueResizeOnEvent'
+  import VueResizeOnEvent from '../../src/index'
 
   export default {
     name: 'App',

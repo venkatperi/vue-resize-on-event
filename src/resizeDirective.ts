@@ -18,14 +18,29 @@
 // DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 // USE OR OTHER DEALINGS IN THE SOFTWARE.
-import Vue from 'vue';
-import App from './App.vue';
-new Vue({
-    el: '#app',
-    data: {
-        message: 'Hello Vue!',
+
+import { resize } from './resize';
+
+/**
+ * Creates a VueJS directive for the given event eventName
+ *
+ * @param eventName
+ */
+
+export function resizeDirective(eventName: string) {
+  return ({
+    inserted(el: HTMLElement) {
+      resize(el)
+      el.addEventListener(eventName, resize)
     },
-    components: {
-        App: App,
+
+    update(el: HTMLElement) {
+      resize(el)
+      el.addEventListener(eventName, resize)
     },
-});
+
+    unbind(el: HTMLElement) {
+      el.removeEventListener(eventName, resize)
+    },
+  })
+}

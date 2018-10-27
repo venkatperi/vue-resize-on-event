@@ -3,18 +3,17 @@
   "version": "1.1.6",
   "description": "Vuejs directive that resizes on an event (e.g. textarea)",
   "author": "Venkat Peri <venkatperi@gmail.com>",
-  "main": "dist/VueResizeOnEvent.min.js",
+  "main": "dist/VueResizeOnEvent.js",
   "unpkg": "dist/VueResizeOnEvent.min.js",
   "browser": "dist/umd/VueResizeOnEvent.min.js",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint src/**/*.{js,vue}",
-    "build": "poi build --format cjs --dist dist; poi build --format umd --dist dist/umd",
-    "test": "poi test",
-    "test:watch": "poi test --watch",
-    "test:cov": "poi test --coverage",
     "clean": "rm -rf dist",
-    "prepare": "npm run clean; npm run build"
+    "build:ts": "tsc",
+    "build:webpack": "NODE_ENV=production webpack",
+    "prebuild": "npm run clean",
+    "build": "npm run build:ts && npm run build:webpack",
+    "prepare": "npm run build"
   },
   "keywords": [
     "vue",
@@ -27,25 +26,24 @@
     "dist/"
   ],
   "dependencies": {
-    "vue": "^2.5.3"
+    "vue": "^2.5.16"
   },
   "devDependencies": {
+    "av-ts": "^0.10.0",
     "babel-plugin-istanbul": "^4.1.1",
     "babel-plugin-transform-runtime": "^6.22.0",
     "babel-preset-env": "^1.3.2",
     "chai": "^4.1.2",
     "eslint": "^4.11.0",
     "eslint-plugin-vue": "beta",
-    "karma-chai": "^0.1.0",
-    "karma-phantomjs-launcher": "^1.0.4",
-    "karma-phantomjs-shim": "^1.5.0",
-    "node-sass": "^4.9.3",
-    "poi": "^9.5.2",
-    "poi-preset-karma": "^9.2.1",
-    "sass-loader": "^7.1.0",
-    "to-pascal-case": "^1.0.0",
-    "typescript": "^2.6.1",
+    "hard-source-webpack-plugin": "^0.12.0",
+    "ts-loader": "^5.2.2",
+    "typescript": "^2.7.2",
+    "vue-loader": "^15.4.2",
     "vue-webpack-loaders": "^1.0.6",
-    "webpack": "^3.1.0"
+    "webpack": "^4.22.0",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-chain": "^5.0.1",
+    "webpack-cli": "^3.1.2"
   }
 }

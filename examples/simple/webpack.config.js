@@ -1,7 +1,5 @@
-const path = require( 'path' );
-
 module.exports = {
-  entry: './src/main.js',
+  entry: './src/main.ts',
   mode: 'development',
 
   module: {
@@ -9,6 +7,14 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
+      },
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+          appendTsSuffixTo: [/\.vue$/],
+        },
       },
       {
         test: /\.js$/,
@@ -31,9 +37,8 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      'code': path.join( __dirname, '../../src' ),
     },
-    extensions: ['*', '.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json', '.ts'],
   },
   devServer: {
     historyApiFallback: true,

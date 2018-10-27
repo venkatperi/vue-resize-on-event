@@ -19,11 +19,23 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 // USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import {resizeDirective} from './resizeDirective';
 
-// noinspection JSUnusedGlobalSymbols
-export default ( type ) => {
-  let directives = {}
-  directives[`resize-on-${type}`] = resizeDirective( type )
-  return { directives }
+import {exec} from 'child_process';
+
+export function execp( cmd, opts ) {
+  opts || (opts = {});
+  return new Promise( ( resolve, reject ) => {
+    const child = exec( cmd, opts,
+      ( err, stdout, stderr ) => err ? reject( err ) : resolve( {
+        stdout: stdout,
+        stderr: stderr,
+      } ) );
+
+    if ( opts.stdout ) {
+      child.stdout.pipe( opts.stdout );
+    }
+    if ( opts.stderr ) {
+      child.stderr.pipe( opts.stderr );
+    }
+  } )
 }
